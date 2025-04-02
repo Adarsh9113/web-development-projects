@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Notes & Previous Year Question Papers</title>
+    <style>
+        :root {
+            --primary-color: #c41a1a;
+            --background-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .notes-list {
+            background-color: var(--background-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .note-item {
+            background-color: white !important;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .note-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: var(--background-color);
+            border: 1px solid rgba(50,50,50,0.1);
+        }
+
+        .notes-list h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Campus Notes & Previous Year Question Papers</h1>
+        
+        <form>
+            <div class="contact-info">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <button type="submit">Add Contact Info</button>
+            </div>
+
+            <div class="notes-list">
+                <!-- Notes will be added here -->
+            </div>
+        </form>
+
+        <h2>Department Details</h2>
+        <ul id="department_list" class="list-group">
+            <!-- CS, IT, ECE departments -->
+        </ul>
+
+        <h2>Semester List</h2>
+        <ul id="semester_list" class="list-group">
+            <!-- 1st to 8th semesters -->
+        </ul>
+
+        <h2>Notes Available Below</h2>
+    </div>
+
+    <script>
+        // Add event listeners for note submission
+        document.querySelectorAll('.note-item').forEach(item => {
+            item.addEventListener('submit', function(e) {
+                const name = e.target.dataset.name;
+                
+                if (this && this[0] && this[1]) {
+                    alert("Note added successfully!");
+                    this.innerHTML = '';
+                    setTimeout(() => {
+                        this.reset();
+                    }, 3000);
+                } else {
+                    alert(`Invalid note submission. Please ensure you have at least two notes up before I can view them.`);
+                }
+            });
+        });
+
+        // Add reset function
+        window.addEventListener('resetNoteList', function() {
+            const notesList = document.getElementById('notes-list').querySelectorAll('.note-item');
+            this.innerHTML = '';
+            for (const note of notesList) {
+                if (!note.textContent.trim()) continue;
+                const div = document.createElement('div');
+                div.className = 'note-item';
+                div.id = note.id;
+                div.textContent = note.textContent;
+                div.style.contactName = note.name;
+                div.addEventListener('click', function() {
+                    this.replaceChild(div);
+                });
+            }
+        });
+
+        // Initialize notes list
+        const notesList = document.querySelectorAll('.note-item');
+        this.notesList = notesList.join('');
+    </script>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/konva/postcss@latest/dist/konva.min.js"></script>

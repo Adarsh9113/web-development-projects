@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Monitoring System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Project Monitoring System</h1>
+        h=<h2>this project is created by adarsh , tanisha , saloni ,  bablu , aditya , and prabancha</h2>
+        <nav>
+            <ul>
+                <li><a href="#create-project">Create Project</a></li>
+                <li><a href="#project-list">Project List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="create-project">
+            <h2>Create New Project</h2>
+            <form id="projectForm">
+                <input type="text" id="projectTitle" placeholder="Project Title" required />
+                <input type="text" id="principalInvestigator" placeholder="Principal Investigator" required />
+                <input type="text" id="fundingAgency" placeholder="Funding Agency" required />
+                <input type="date" id="startDate" required />
+                <input type="date" id="completionDate" required />
+                <button type="submit">Create Project</button>
+            </form>
+            <div id="createResponse"></div>
+        </section>
+
+        <section id="project-list">
+            <h2>Projects</h2>
+            <ul id="projects"></ul>
+        </section>
+    </main>
+
+   <footer>
+       <p>&copy; 2024 Project Monitoring System</p>
+   </footer>
+
+   <script src="script.js"></script> 
+</body>
+</html>

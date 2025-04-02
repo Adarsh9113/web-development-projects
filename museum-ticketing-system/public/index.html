@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museum Ticket Booking</title>
+  <!-- Correct path to the CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #6dd5ed, #2193b0);
+      color: #fff;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+    }
+    .chatbot-container, .booking-form {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    #chatbox {
+      background: #333;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    #userInput {
+      width: calc(100% - 90px);
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 80px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #2193b0;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: #1e78a5;
+    }
+    select, input[type="text"], input[type="number"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield; /* Firefox */
+      appearance: textfield; /* Other browsers */
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    .popup.active {
+      display: block;
+    }
+    .popup button {
+      background: #e74c3c;
+    }
+    .popup button:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+    <h1>Museum Chatbot Ticketing System</h1>
+    <div id="chatbox">
+      <p>Chatbot: Welcome! How can I assist you today?</p>
+    </div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <div class="booking-form">
+    <h2>Book Your Ticket</h2>
+    <form id="bookingForm">
+      <input type="text" id="name" placeholder="Your Name" required><br>
+      <select id="language" required>
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+      </select><br>
+      <input type="number" id="tickets" placeholder="Number of Tickets" required><br>
+      <input type="text" id="event" placeholder="Event Name" required><br>
+      <button type="button" onclick="bookTicket()">Book Ticket</button>
+    </form>
+  </div>
+  <h3>created by-Adarsh,saloni,tanisha,bablu,prabancha</h3>
+
+
+  <!-- Popup message -->
+  <div id="popup" class="popup">
+    <p>Thank you for booking your ticket! Your booking has been confirmed.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function sendMessage() {
+      const userInput = document.getElementById('userInput').value;
+      const chatbox = document.getElementById('chatbox');
+      const response = document.createElement('p');
+      response.textContent = 'Chatbot: ' + getChatbotResponse(userInput);
+      chatbox.appendChild(response);
+      document.getElementById('userInput').value = '';
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    function getChatbotResponse(userInput) {
+      // Simple chatbot logic for demonstration
+      if (userInput.toLowerCase().includes('ticket')) {
+        return 'You can book your tickets using the form below.';
+      }
+      return 'I\'m not sure how to help with that.';
+    }
+
+    function bookTicket() {
+      // Booking logic goes here
+      document.getElementById('popup').classList.add('active');
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Colorful background */
+}
+
+header {
+    background-color: rgba(76, 175, 80, 0.9); /* Semi-transparent green */
+    color: white;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white; /* Card background */
+}
+
+.bubble-button {
+    background-color: #4CAF50; /* Default button color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 10px; /* Space between buttons */
+    border-radius: 30px; /* Rounded edges */
+    transition-duration: 0.4s; /* Animation duration */
+}
+
+.bubble-button:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+}
+
+/* Input styling */
+input[type="text"], textarea {
+    padding: 10px;
+    width: calc(100% - 22px);
+}
+
+/* Footer styling */
+footer {
+   text-align: center;
+}

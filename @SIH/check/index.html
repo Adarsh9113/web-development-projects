@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-driven Inspection System</title>
+    <link rel="stylesheet" href="/check/style.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Inspection System</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#inspections">Inspections</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <div class="card">
+                <h3>Real-Time Data</h3>
+                <p id="realTimeData">Loading...</p>
+            </div>
+        </section>
+
+        <section id="inspections">
+            <h2>Inspections</h2>
+            <button class="bubble-button" id="fetchInspectionsBtn">Fetch Inspections</button>
+            <ul id="inspectionList"></ul>
+        </section>
+
+        <section id="reports">
+            <h2>Reports</h2>
+            <form id="reportForm">
+                <input type="text" id="reportInput" placeholder="Enter report details" required />
+                <button type="submit" class="bubble-button">Generate Report</button>
+            </form>
+            <div id="reportOutput"></div>
+        </section>
+
+        <section id="settings">
+            <h2>Settings</h2>
+            <!-- Settings form can go here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AI-driven Inspection System</p>
+        <p>this is created by team_tech_tantra involving </p>
+        <p>aditya, adarsh, bablu,tanisha, saloni,and prabancha </p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>

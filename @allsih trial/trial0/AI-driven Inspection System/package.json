@@ -1,0 +1,17 @@
+{
+    "name": "inspection-system",
+    "version": "1.0.0",
+    "description": "AI-driven Inspection System",
+    "main": "server.js",
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "compromise": "^13.11.1",
+      "express": "^4.17.1"
+    },
+    "scripts": {
+      "start": "node server.js"
+    },
+    "author": "Your Name",
+    "license": "ISC"
+  }
+  

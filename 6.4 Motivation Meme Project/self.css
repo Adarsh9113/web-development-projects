@@ -1,0 +1,26 @@
+h1{
+    font:<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">;
+}
+html{
+    color: white;
+    background-color: black;
+}
+img{
+    border: 5px;
+    width: 100%;
+}
+.ad{
+    text-align: center;
+}
+div{
+    width: 50%;
+    margin-left: 25%;
+}
+h1{
+    text-transform: uppercase;
+}
+p{
+    text-transform: inherit;
+}

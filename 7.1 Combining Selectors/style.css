@@ -1,0 +1,17 @@
+/* Write your code here: */
+h1, h2{
+    color: antiquewhite;
+}
+.box>p{
+    color: whitesmoke;
+
+}
+.box li{
+    color: aquamarine;
+}
+li.done{
+    color: black;
+}
+ul p.done{
+    color: magenta;
+}
